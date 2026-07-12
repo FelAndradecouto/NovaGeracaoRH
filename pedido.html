@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){try{var t=localStorage.getItem("cg-tema");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fazer pedido — CG Acessórios</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/marca/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/marca/favicon-512.png">
+  <link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pedido.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a href="index.html" class="brand"><img src="assets/img/marca/logo.jpg" alt="CG Acessórios" class="brand-logo"> CG Acessórios</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="pedido.html" class="active">Fazer pedido</a></li>
+        <li><a href="gestao.html">Gestão</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar modo claro/escuro"><span class="icon-sol">☀️</span><span class="icon-lua">🌙</span></button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </nav>
+
+  <header class="pedido-header">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Passo único</span>
+      <h1>Fazer pedido</h1>
+      <p style="color:rgba(245,240,228,0.75)">Sem cadastro. Só o essencial para combinarmos os detalhes.</p>
+    </div>
+  </header>
+
+  <div class="pedido-wrap">
+    <div class="pedido-card">
+      <div id="pedido-erro" class="alert-erro" hidden></div>
+
+      <form id="form-pedido">
+        <div class="field">
+          <label for="produto">Peça desejada</label>
+          <select id="produto" name="produto" required></select>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+          </div>
+          <div class="field">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(51) 90000-0000" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="endereco">Endereço para entrega (opcional)</label>
+          <input type="text" id="endereco" name="endereco" placeholder="Deixe em branco para combinar pelo WhatsApp">
+        </div>
+
+        <div class="field">
+          <label for="detalhes" id="detalhes-label">Tamanho / cor / variação</label>
+          <div class="chips-variacao" id="chips-variacao" hidden></div>
+          <input type="text" id="detalhes" name="detalhes" placeholder="Ex: aro 18, tom dourado">
+          <p class="field-hint" id="detalhes-ajuda" hidden>Marque uma ou mais opções.</p>
+        </div>
+
+        <div class="field">
+          <label for="observacoes">Observações</label>
+          <textarea id="observacoes" name="observacoes" placeholder="Alguma informação extra sobre o pedido"></textarea>
+        </div>
+
+        <div class="pedido-actions-row">
+          <button type="button" class="btn btn-line" onclick="window.location.href='catalogo.html'">Voltar ao catálogo</button>
+          <button type="submit" class="btn btn-primary">Finalizar pedido</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-col">
+        <p class="brand" style="color:var(--bone); font-size:1.2rem;"><img src="assets/img/marca/logo.jpg" alt="CG Acessórios" class="brand-logo"> CG Acessórios</p>
+        <p>Semijoias banhadas a ouro para todos os momentos.</p>
+        <div class="foot-social" id="foot-social"></div>
+      </div>
+      <div class="foot-col">
+        <p><a href="https://www.instagram.com/lojacg.oficial" target="_blank" rel="noopener">Instagram @lojacg.oficial</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">&copy; 2026 CG Acessórios.</div>
+  </footer>
+
+  <script>
+    document.getElementById("nav-toggle").addEventListener("click", () => {
+      document.getElementById("nav-links").classList.toggle("open");
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/tema.js"></script>
+  <script src="js/social.js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <script src="data/produtos.js"></script>
+  <script src="js/pedido.js"></script>
+</body>
+</html>

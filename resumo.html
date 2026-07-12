@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){try{var t=localStorage.getItem("cg-tema");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido confirmado — CG Acessórios</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/marca/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/marca/favicon-512.png">
+  <link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/resumo.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a href="index.html" class="brand"><img src="assets/img/marca/logo.jpg" alt="CG Acessórios" class="brand-logo"> CG Acessórios</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="pedido.html">Fazer pedido</a></li>
+        <li><a href="gestao.html">Gestão</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar modo claro/escuro"><span class="icon-sol">☀️</span><span class="icon-lua">🌙</span></button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </nav>
+
+  <header class="resumo-header">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Pedido recebido</span>
+      <h1>Obrigada pelo seu pedido!</h1>
+    </div>
+  </header>
+
+  <div class="resumo-wrap">
+    <div class="resumo-card" id="resumo-conteudo">
+      <div class="selo">✓</div>
+      <h2>Resumo do pedido</h2>
+      <p>Confira os dados abaixo. Em breve entraremos em contato pelo WhatsApp para combinar pagamento e entrega.</p>
+
+      <div id="resumo-lista"></div>
+
+      <div class="resumo-actions">
+        <a id="link-whatsapp" class="btn btn-primary" target="_blank" rel="noopener">Enviar confirmação pelo WhatsApp</a>
+        <button id="botao-pdf" class="btn btn-line">Baixar resumo em PDF</button>
+        <a href="catalogo.html" class="btn btn-ghost" style="color:var(--ink); border-color:var(--bone-2);">Continuar comprando</a>
+      </div>
+    </div>
+
+    <div id="resumo-vazio" hidden>
+      <p>Nenhum pedido recente encontrado nesta sessão.</p>
+      <a href="catalogo.html" class="btn btn-primary">Ir para o catálogo</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-col">
+        <p class="brand" style="color:var(--bone); font-size:1.2rem;"><img src="assets/img/marca/logo.jpg" alt="CG Acessórios" class="brand-logo"> CG Acessórios</p>
+        <p>Semijoias banhadas a ouro para todos os momentos.</p>
+        <div class="foot-social" id="foot-social"></div>
+      </div>
+      <div class="foot-col">
+        <p><a href="https://www.instagram.com/lojacg.oficial" target="_blank" rel="noopener">Instagram @lojacg.oficial</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">&copy; 2026 CG Acessórios.</div>
+  </footer>
+
+  <script>
+    document.getElementById("nav-toggle").addEventListener("click", () => {
+      document.getElementById("nav-links").classList.toggle("open");
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/tema.js"></script>
+  <script src="js/social.js"></script>
+  <script src="js/resumo.js"></script>
+</body>
+</html>

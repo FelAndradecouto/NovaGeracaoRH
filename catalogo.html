@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){try{var t=localStorage.getItem("cg-tema");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo — CG Acessórios</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/marca/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/marca/favicon-512.png">
+  <link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a href="index.html" class="brand"><img src="assets/img/marca/logo.jpg" alt="CG Acessórios" class="brand-logo"> CG Acessórios</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="catalogo.html" class="active">Catálogo</a></li>
+        <li><a href="pedido.html">Fazer pedido</a></li>
+        <li><a href="gestao.html">Gestão</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar modo claro/escuro"><span class="icon-sol">☀️</span><span class="icon-lua">🌙</span></button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </nav>
+
+  <header class="catalogo-header">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Vitrine</span>
+      <h1>Catálogo</h1>
+      <p style="color:rgba(253,238,243,0.75)">Escolha a peça e finalize o pedido em seguida.</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="tabs-categoria" id="tabs-categoria">
+      <button data-categoria="todos">Todos</button>
+      <button data-categoria="aneis">Anéis</button>
+      <button data-categoria="colares">Colares</button>
+      <button data-categoria="brincos">Brincos</button>
+      <button data-categoria="pulseiras">Pulseiras</button>
+    </div>
+
+    <div class="grid-produtos" id="grid-produtos"></div>
+    <p id="catalogo-vazio" hidden>Nenhuma peça encontrada nesta categoria.</p>
+  </div>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-fechar" id="lightbox-fechar" aria-label="Fechar">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Foto anterior" hidden>‹</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Próxima foto" hidden>›</button>
+    <p class="lightbox-legenda" id="lightbox-legenda"></p>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-col">
+        <p class="brand" style="color:var(--bone); font-size:1.2rem;"><img src="assets/img/marca/logo.jpg" alt="CG Acessórios" class="brand-logo"> CG Acessórios</p>
+        <p>Semijoias banhadas a ouro para todos os momentos.</p>
+        <div class="foot-social" id="foot-social"></div>
+      </div>
+      <div class="foot-col">
+        <p><a href="https://www.instagram.com/lojacg.oficial" target="_blank" rel="noopener">Instagram @lojacg.oficial</a></p>
+        <p><a href="pedido.html">Fazer pedido</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">&copy; 2026 CG Acessórios.</div>
+  </footer>
+
+  <script>
+    document.getElementById("nav-toggle").addEventListener("click", () => {
+      document.getElementById("nav-links").classList.toggle("open");
+    });
+  </script>
+  <script src="data/produtos.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/tema.js"></script>
+  <script src="js/social.js"></script>
+</body>
+</html>
