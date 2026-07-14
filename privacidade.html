@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <script>(function(){try{var t=localStorage.getItem("cg-tema");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestão de Pedidos | CG Acessórios</title>
-  <meta name="description" content="Painel interno de pedidos da CG Acessórios.">
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="canonical" href="https://www.cgacessorios.com.br/gestao.html">
+  <title>Política de Privacidade | CG Acessórios</title>
+  <meta name="description" content="Saiba como a CG Acessórios trata os dados usados para processar seu pedido.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.cgacessorios.com.br/privacidade.html">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/marca/favicon-32.png">
   <link rel="icon" type="image/png" sizes="512x512" href="assets/img/marca/favicon-512.png">
   <link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/gestao.css">
+  <link rel="stylesheet" href="css/institucional.css">
 </head>
 <body>
 
@@ -35,9 +35,9 @@
             <li class="nav-dropdown-sep" role="separator"></li>
             <li><a href="quem-somos.html">Quem somos</a></li>
             <li><a href="termos.html">Termos de uso</a></li>
-            <li><a href="privacidade.html">Política de privacidade</a></li>
+            <li><a href="privacidade.html" class="active">Política de privacidade</a></li>
             <li class="nav-dropdown-sep" role="separator"></li>
-            <li><a href="gestao.html" class="active">Gestão</a></li>
+            <li><a href="gestao.html">Gestão</a></li>
           </ul>
         </li>
       </ul>
@@ -46,36 +46,34 @@
     </div>
   </nav>
 
-  <header class="gestao-header">
+  <header class="institucional-header">
     <div class="wrap">
-      <span class="eyebrow on-dark">Uso interno</span>
-      <h1>Gestão de pedidos</h1>
+      <span class="eyebrow on-dark">A CG Acessórios</span>
+      <h1>Política de privacidade</h1>
+      <p>Como tratamos os dados que você compartilha com a gente.</p>
     </div>
   </header>
 
-  <div id="portao-acesso" class="portao">
-    <div class="portao-card">
-      <form id="form-acesso">
-        <div class="field">
-          <label for="codigo-acesso">Código de acesso</label>
-          <input type="password" id="codigo-acesso" placeholder="Digite o código">
-        </div>
-        <p id="acesso-erro" hidden style="color:var(--rose);">Código incorreto.</p>
-        <button type="submit" class="btn btn-primary" style="width:100%;">Entrar</button>
-        <p>Esta é apenas uma trava simples, não um login seguro. Não use para dados sensíveis.</p>
-      </form>
-    </div>
-  </div>
+  <div class="institucional-wrap">
+    <a class="institucional-voltar" href="index.html">← Voltar para o início</a>
+    <div class="institucional-corpo">
+      <p class="atualizado">Última atualização: julho de 2026.</p>
+      <h2>Quais dados coletamos</h2>
+      <p>Para processar seu pedido, coletamos apenas o necessário: <strong>nome, número de WhatsApp</strong> e, se você preferir, um <strong>endereço de entrega</strong>. Se o endereço não for informado, combinamos esse detalhe diretamente pelo WhatsApp.</p>
+      <h2>Para que usamos esses dados</h2>
+      <ul>
+        <li>Confirmar e organizar o seu pedido;</li>
+        <li>Combinar forma de pagamento e entrega pelo WhatsApp;</li>
+        <li>Entrar em contato caso haja alguma dúvida sobre o pedido.</li>
+      </ul>
+      <h2>Compartilhamento</h2>
+      <p>Não vendemos nem compartilhamos seus dados com terceiros para fins de publicidade. Seus dados são usados exclusivamente para viabilizar o seu pedido.</p>
+      <h2>Cookies e preferências locais</h2>
+      <p>O site guarda no seu navegador apenas a sua preferência de tema (claro ou escuro) — não usamos cookies de rastreamento ou publicidade.</p>
+      <h2>Seus direitos (LGPD)</h2>
+      <p>Você pode solicitar a qualquer momento a confirmação, correção ou exclusão dos seus dados armazenados conosco. Basta chamar no WhatsApp ou enviar um e-mail pedindo a alteração.</p>
 
-  <div id="painel-gestao" class="wrap gestao-wrap" hidden>
-    <section class="gestao-secao">
-      <h2>Pedidos pendentes</h2>
-      <div class="pedido-grid" id="lista-pendentes"></div>
-    </section>
-    <section class="gestao-secao">
-      <h2>Pedidos confirmados</h2>
-      <div class="pedido-grid" id="lista-confirmados"></div>
-    </section>
+    </div>
   </div>
 
   <footer class="site-footer">
@@ -117,12 +115,9 @@
       document.getElementById("nav-links").classList.toggle("open");
     });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/config.js"></script>
   <script src="js/tema.js"></script>
   <script src="js/nav-dropdown.js"></script>
   <script src="js/social.js"></script>
-  <script src="js/supabaseClient.js"></script>
-  <script src="js/gestao.js"></script>
 </body>
 </html>

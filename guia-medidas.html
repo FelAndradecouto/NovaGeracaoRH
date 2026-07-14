@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <script>(function(){try{var t=localStorage.getItem("cg-tema");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestão de Pedidos | CG Acessórios</title>
-  <meta name="description" content="Painel interno de pedidos da CG Acessórios.">
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="canonical" href="https://www.cgacessorios.com.br/gestao.html">
+  <title>Guia de Medidas | CG Acessórios</title>
+  <meta name="description" content="Descubra o tamanho ideal de anéis, colares e pulseiras antes de fazer seu pedido na CG Acessórios.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.cgacessorios.com.br/guia-medidas.html">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/marca/favicon-32.png">
   <link rel="icon" type="image/png" sizes="512x512" href="assets/img/marca/favicon-512.png">
   <link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/gestao.css">
+  <link rel="stylesheet" href="css/institucional.css">
 </head>
 <body>
 
@@ -30,14 +30,14 @@
             <li><a href="faq.html">Perguntas frequentes</a></li>
             <li><a href="garantia.html">Garantia</a></li>
             <li><a href="cuidados.html">Cuidado com a peça</a></li>
-            <li><a href="guia-medidas.html">Guia de medidas</a></li>
+            <li><a href="guia-medidas.html" class="active">Guia de medidas</a></li>
             <li><a href="trocas-devolucoes.html">Trocas e devoluções</a></li>
             <li class="nav-dropdown-sep" role="separator"></li>
             <li><a href="quem-somos.html">Quem somos</a></li>
             <li><a href="termos.html">Termos de uso</a></li>
             <li><a href="privacidade.html">Política de privacidade</a></li>
             <li class="nav-dropdown-sep" role="separator"></li>
-            <li><a href="gestao.html" class="active">Gestão</a></li>
+            <li><a href="gestao.html">Gestão</a></li>
           </ul>
         </li>
       </ul>
@@ -46,36 +46,31 @@
     </div>
   </nav>
 
-  <header class="gestao-header">
+  <header class="institucional-header">
     <div class="wrap">
-      <span class="eyebrow on-dark">Uso interno</span>
-      <h1>Gestão de pedidos</h1>
+      <span class="eyebrow on-dark">Dúvidas</span>
+      <h1>Guia de medidas</h1>
+      <p>Descubra o aro certo do seu anel antes de fazer o pedido.</p>
     </div>
   </header>
 
-  <div id="portao-acesso" class="portao">
-    <div class="portao-card">
-      <form id="form-acesso">
-        <div class="field">
-          <label for="codigo-acesso">Código de acesso</label>
-          <input type="password" id="codigo-acesso" placeholder="Digite o código">
-        </div>
-        <p id="acesso-erro" hidden style="color:var(--rose);">Código incorreto.</p>
-        <button type="submit" class="btn btn-primary" style="width:100%;">Entrar</button>
-        <p>Esta é apenas uma trava simples, não um login seguro. Não use para dados sensíveis.</p>
-      </form>
-    </div>
-  </div>
+  <div class="institucional-wrap">
+    <a class="institucional-voltar" href="index.html">← Voltar para o início</a>
+    <div class="institucional-corpo">
+      <h2>Como funciona a numeração dos aros</h2>
+      <p>Nas alianças e anéis, cada tamanho é chamado de "aro". Muitas das nossas peças vêm em aro duplo (por exemplo, <strong>22/23</strong>), o que significa que o anel serve confortavelmente nos dois tamanhos vizinhos.</p>
+      <h2>Como medir o seu aro em casa</h2>
+      <ol>
+        <li>Pegue um anel que já sirva bem no dedo desejado;</li>
+        <li>Meça o diâmetro interno dele, de uma borda a outra, em milímetros;</li>
+        <li>Compare com uma tabela de aro brasileira (medida de diâmetro interno) para achar o número correspondente;</li>
+        <li>Na dúvida entre dois números, escolha o maior — é mais fácil ajustar um anel um pouco largo do que um apertado.</li>
+      </ol>
+      <p>Você também pode enrolar um barbante ao redor do dedo, marcar onde ele se encontra, medir o comprimento em milímetros e dividir por 3,14 para chegar ao diâmetro aproximado.</p>
+      <h2>Ficou com dúvida?</h2>
+      <p>Manda o número que você usa normalmente (mesmo de outra marca) pra gente no WhatsApp — te ajudamos a confirmar o aro certo antes de fechar o pedido.</p>
 
-  <div id="painel-gestao" class="wrap gestao-wrap" hidden>
-    <section class="gestao-secao">
-      <h2>Pedidos pendentes</h2>
-      <div class="pedido-grid" id="lista-pendentes"></div>
-    </section>
-    <section class="gestao-secao">
-      <h2>Pedidos confirmados</h2>
-      <div class="pedido-grid" id="lista-confirmados"></div>
-    </section>
+    </div>
   </div>
 
   <footer class="site-footer">
@@ -117,12 +112,9 @@
       document.getElementById("nav-links").classList.toggle("open");
     });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/config.js"></script>
   <script src="js/tema.js"></script>
   <script src="js/nav-dropdown.js"></script>
   <script src="js/social.js"></script>
-  <script src="js/supabaseClient.js"></script>
-  <script src="js/gestao.js"></script>
 </body>
 </html>

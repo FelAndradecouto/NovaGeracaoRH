@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <script>(function(){try{var t=localStorage.getItem("cg-tema");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestão de Pedidos | CG Acessórios</title>
-  <meta name="description" content="Painel interno de pedidos da CG Acessórios.">
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="canonical" href="https://www.cgacessorios.com.br/gestao.html">
+  <title>Termos de Uso | CG Acessórios</title>
+  <meta name="description" content="Termos de uso do site e do atendimento da CG Acessórios.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.cgacessorios.com.br/termos.html">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/marca/favicon-32.png">
   <link rel="icon" type="image/png" sizes="512x512" href="assets/img/marca/favicon-512.png">
   <link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/gestao.css">
+  <link rel="stylesheet" href="css/institucional.css">
 </head>
 <body>
 
@@ -34,10 +34,10 @@
             <li><a href="trocas-devolucoes.html">Trocas e devoluções</a></li>
             <li class="nav-dropdown-sep" role="separator"></li>
             <li><a href="quem-somos.html">Quem somos</a></li>
-            <li><a href="termos.html">Termos de uso</a></li>
+            <li><a href="termos.html" class="active">Termos de uso</a></li>
             <li><a href="privacidade.html">Política de privacidade</a></li>
             <li class="nav-dropdown-sep" role="separator"></li>
-            <li><a href="gestao.html" class="active">Gestão</a></li>
+            <li><a href="gestao.html">Gestão</a></li>
           </ul>
         </li>
       </ul>
@@ -46,36 +46,32 @@
     </div>
   </nav>
 
-  <header class="gestao-header">
+  <header class="institucional-header">
     <div class="wrap">
-      <span class="eyebrow on-dark">Uso interno</span>
-      <h1>Gestão de pedidos</h1>
+      <span class="eyebrow on-dark">A CG Acessórios</span>
+      <h1>Termos de uso</h1>
+      <p>Regras gerais para o uso do site e para os pedidos realizados.</p>
     </div>
   </header>
 
-  <div id="portao-acesso" class="portao">
-    <div class="portao-card">
-      <form id="form-acesso">
-        <div class="field">
-          <label for="codigo-acesso">Código de acesso</label>
-          <input type="password" id="codigo-acesso" placeholder="Digite o código">
-        </div>
-        <p id="acesso-erro" hidden style="color:var(--rose);">Código incorreto.</p>
-        <button type="submit" class="btn btn-primary" style="width:100%;">Entrar</button>
-        <p>Esta é apenas uma trava simples, não um login seguro. Não use para dados sensíveis.</p>
-      </form>
-    </div>
-  </div>
+  <div class="institucional-wrap">
+    <a class="institucional-voltar" href="index.html">← Voltar para o início</a>
+    <div class="institucional-corpo">
+      <p class="atualizado">Última atualização: julho de 2026.</p>
+      <h2>Sobre este site</h2>
+      <p>Este site pertence à CG Acessórios e tem como objetivo apresentar o catálogo de semijoias e permitir que você monte um pedido, que é finalizado e confirmado pelo WhatsApp.</p>
+      <h2>Pedidos</h2>
+      <p>Ao enviar um pedido pelo site, você está solicitando um orçamento/confirmação — a compra só é efetivada depois da confirmação dos detalhes (peça, tamanho, forma de pagamento e entrega) pelo WhatsApp.</p>
+      <h2>Preços e disponibilidade</h2>
+      <p>Os preços exibidos no catálogo podem ser atualizados sem aviso prévio. A disponibilidade de tamanhos e modelos é confirmada no momento do atendimento.</p>
+      <h2>Uso do site</h2>
+      <p>Você concorda em usar este site apenas para fins lícitos, sem tentar acessar áreas restritas ou prejudicar seu funcionamento.</p>
+      <h2>Propriedade intelectual</h2>
+      <p>Textos, fotos e identidade visual deste site pertencem à CG Acessórios e não podem ser copiados ou reutilizados sem autorização.</p>
+      <h2>Dúvidas sobre estes termos</h2>
+      <p>Qualquer dúvida sobre estes termos, fale com a gente pelo WhatsApp ou pelo e-mail informado no rodapé do site.</p>
 
-  <div id="painel-gestao" class="wrap gestao-wrap" hidden>
-    <section class="gestao-secao">
-      <h2>Pedidos pendentes</h2>
-      <div class="pedido-grid" id="lista-pendentes"></div>
-    </section>
-    <section class="gestao-secao">
-      <h2>Pedidos confirmados</h2>
-      <div class="pedido-grid" id="lista-confirmados"></div>
-    </section>
+    </div>
   </div>
 
   <footer class="site-footer">
@@ -117,12 +113,9 @@
       document.getElementById("nav-links").classList.toggle("open");
     });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/config.js"></script>
   <script src="js/tema.js"></script>
   <script src="js/nav-dropdown.js"></script>
   <script src="js/social.js"></script>
-  <script src="js/supabaseClient.js"></script>
-  <script src="js/gestao.js"></script>
 </body>
 </html>
