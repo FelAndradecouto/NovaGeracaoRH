@@ -1,14 +1,55 @@
 // ============================================================
 // MENU SUSPENSO (DROPDOWN) DO TOPO
 // Controla abrir/fechar do dropdown "Mais" que reúne todas as
-// páginas do site em um único menu, e também o menu mobile
-// (hambúrguer) — inclui fechamento automático ao clicar fora,
-// ao apertar Esc, ou ao clicar em um link do menu.
+// páginas do site em um único menu.
 // ============================================================
 document.addEventListener("DOMContentLoaded", () => {
-  const dropdowns = document.querySelectorAll(".nav-dropdown");
+  // ---------- Menu hambúrguer (mobile) ----------
   const navToggle = document.getElementById("nav-toggle");
   const navLinks = document.getElementById("nav-links");
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", (evento) => {
+      evento.stopPropagation();
+      const estaAberto = navLinks.classList.toggle("open");
+      navToggle.classList.toggle("open", estaAberto);
+      navToggle.setAttribute("aria-expanded", estaAberto ? "true" : "false");
+    });
+
+    // Fecha automaticamente ao clicar/tocar fora do menu
+    document.addEventListener("click", (evento) => {
+      if (
+        navLinks.classList.contains("open") &&
+        !navLinks.contains(evento.target) &&
+        !navToggle.contains(evento.target)
+      ) {
+        navLinks.classList.remove("open");
+        navToggle.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Fecha com a tecla Esc
+    document.addEventListener("keydown", (evento) => {
+      if (evento.key === "Escape" && navLinks.classList.contains("open")) {
+        navLinks.classList.remove("open");
+        navToggle.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Fecha o menu ao clicar em um link (evita ficar aberto ao navegar)
+    navLinks.addEventListener("click", (evento) => {
+      if (evento.target.tagName === "A") {
+        navLinks.classList.remove("open");
+        navToggle.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  // ---------- Dropdown "Mais" (desktop/mobile) ----------
+  const dropdowns = document.querySelectorAll(".nav-dropdown");
 
   dropdowns.forEach((dropdown) => {
     const toggle = dropdown.querySelector(".nav-dropdown-toggle");
@@ -28,24 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  function fecharMenuMobile() {
-    if (navLinks) navLinks.classList.remove("open");
-    navToggle?.setAttribute("aria-expanded", "false");
-  }
-
-  if (navToggle && navLinks) {
-    navToggle.addEventListener("click", (evento) => {
-      evento.stopPropagation();
-      const estaAberto = navLinks.classList.toggle("open");
-      navToggle.setAttribute("aria-expanded", estaAberto ? "true" : "false");
-    });
-
-    // Fecha ao clicar num link do menu (navegação para outra página/âncora)
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", fecharMenuMobile);
-    });
-  }
-
   document.addEventListener("click", (evento) => {
     dropdowns.forEach((dropdown) => {
       if (dropdown.classList.contains("open") && !dropdown.contains(evento.target)) {
@@ -53,16 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdown.querySelector(".nav-dropdown-toggle")?.setAttribute("aria-expanded", "false");
       }
     });
-
-    if (
-      navLinks &&
-      navLinks.classList.contains("open") &&
-      !navLinks.contains(evento.target) &&
-      evento.target !== navToggle &&
-      !navToggle?.contains(evento.target)
-    ) {
-      fecharMenuMobile();
-    }
   });
 
   document.addEventListener("keydown", (evento) => {
@@ -71,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdown.classList.remove("open");
         dropdown.querySelector(".nav-dropdown-toggle")?.setAttribute("aria-expanded", "false");
       });
-      fecharMenuMobile();
     }
   });
 });

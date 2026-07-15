@@ -29,9 +29,12 @@
   .pedido-card { grid-template-columns: minmax(0, 1fr); }
   .pedido-card form,
   .pedido-card #pedido-erro { grid-column: 1; }
+  /* No mobile o layout vira 1 coluna só (foto em cima, formulário embaixo).
+     O "position: sticky" da .pedido-media é só pro desktop (2 colunas lado
+     a lado); em coluna única ele fazia a foto "grudar" no topo da tela e
+     ficar sobreposta ao formulário enquanto a página rolava. */
   .pedido-media {
     position: static;
-    top: auto;
     grid-row: auto;
   }
 }
