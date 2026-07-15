@@ -29,6 +29,11 @@
   .pedido-card { grid-template-columns: minmax(0, 1fr); }
   .pedido-card form,
   .pedido-card #pedido-erro { grid-column: 1; }
+  .pedido-media {
+    position: static;
+    top: auto;
+    grid-row: auto;
+  }
 }
 
 /* ---------- Painel de fotos da peça escolhida ---------- */

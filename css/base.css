@@ -202,7 +202,7 @@ footer.site-footer .brand-logo { width: 34px; height: 34px; }
   top: calc(100% + 14px);
   left: 50%;
   min-width: 230px;
-  background: var(--velvet);
+  background: var(--gold);
   border: var(--line);
   border-radius: 10px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
@@ -238,8 +238,8 @@ footer.site-footer .brand-logo { width: 34px; height: 34px; }
 @media (max-width: 720px) {
   .nav-links {
     position: fixed;
-    inset: 76px 0 auto 0;
-    background: var(--velvet);
+    inset: 76px 0 0 0;
+    background: var(--gold);
     flex-direction: column;
     align-items: stretch;
     padding: var(--space-3);
@@ -247,8 +247,8 @@ footer.site-footer .brand-logo { width: 34px; height: 34px; }
     transform: translateY(-130%);
     transition: transform 0.25s ease;
     border-bottom: var(--line);
-    max-height: calc(100vh - 76px);
     overflow-y: auto;
+    z-index: 45;
   }
   .nav-links.open { transform: translateY(0); }
   .nav-toggle {
@@ -362,9 +362,10 @@ footer.site-footer .foot-contato .rotulo-icone {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1.5px solid var(--medallion-gold);
-  color: var(--medallion-gold-light);
-  background: rgba(0, 0, 0, 0.12);
+  border: none;
+  color: var(--gold);
+  background: var(--bone);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 footer.site-footer .foot-contato .rotulo-icone svg {
@@ -372,8 +373,8 @@ footer.site-footer .foot-contato .rotulo-icone svg {
   height: 16px;
 }
 footer.site-footer .foot-contato .rotulo:hover .rotulo-icone {
-  background: var(--medallion-gold);
-  color: var(--velvet);
+  background: var(--gold);
+  color: var(--bone);
   transform: scale(1.08);
 }
 footer.site-footer .foot-contato .rotulo:hover {
