@@ -15,6 +15,18 @@
   <link rel="stylesheet" href="css/base.css?v=20260715b">
   <link rel="stylesheet" href="css/pedido.css?v=20260715b">
   <link rel="stylesheet" href="css/zoom-imagem.css?v=20260715b">
+  <style>
+    /* Correção do bug de foto fixa/sobreposta no mobile, embutida direto
+       aqui pra não depender de cache de nenhum arquivo .css externo. */
+    @media (max-width: 860px) {
+      .pedido-media {
+        position: static !important;
+        top: auto !important;
+        grid-row: auto !important;
+        grid-column: 1 !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
