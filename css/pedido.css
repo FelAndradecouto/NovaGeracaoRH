@@ -29,14 +29,6 @@
   .pedido-card { grid-template-columns: minmax(0, 1fr); }
   .pedido-card form,
   .pedido-card #pedido-erro { grid-column: 1; }
-  /* No mobile o layout vira 1 coluna só (foto em cima, formulário embaixo).
-     O "position: sticky" da .pedido-media é só pro desktop (2 colunas lado
-     a lado); em coluna única ele fazia a foto "grudar" no topo da tela e
-     ficar sobreposta ao formulário enquanto a página rolava. */
-  .pedido-media {
-    position: static;
-    grid-row: auto;
-  }
 }
 
 /* ---------- Painel de fotos da peça escolhida ---------- */
@@ -47,6 +39,20 @@
   top: var(--space-3);
 }
 .pedido-media[hidden] { display: none; }
+
+/* No mobile o layout vira 1 coluna só (foto em cima, formulário embaixo).
+   O "position: sticky" acima é só pro desktop (2 colunas lado a lado); em
+   coluna única ele fazia a foto "grudar" no topo da tela e ficar sobreposta
+   ao formulário enquanto a página rolava. Essa regra precisa vir DEPOIS da
+   regra base acima, senão o cascade do CSS ignora ela no mobile. */
+@media (max-width: 860px) {
+  .pedido-media {
+    position: static;
+    top: auto;
+    grid-row: auto;
+    grid-column: 1;
+  }
+}
 .pedido-foto-principal {
   position: relative;
   background: var(--bone-2);
