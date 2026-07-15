@@ -114,6 +114,7 @@
   max-height: 60vh;
   border-radius: var(--radius-s);
   object-fit: contain;
+  cursor: zoom-in;
 }
 
 .detalhe-info {

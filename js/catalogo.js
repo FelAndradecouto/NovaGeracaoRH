@@ -118,12 +118,18 @@ function iniciarLightbox(produtos, grid) {
   let indiceAtual = 0;
   let elementoQueAbriu = null;
 
+  let produtoAtual = null;
+
   function mostrarFoto() {
     img.src = fotosAtuais[indiceAtual];
     const multiplas = fotosAtuais.length > 1;
     btnPrev.hidden = !multiplas;
     btnNext.hidden = !multiplas;
   }
+
+  img.addEventListener("click", () => {
+    window.abrirZoomImagem(fotosAtuais, indiceAtual, produtoAtual ? produtoAtual.nome : "");
+  });
 
   function montarInfo(produto) {
     const specs = Object.entries(ROTULOS_SPEC)
@@ -153,20 +159,21 @@ function iniciarLightbox(produtos, grid) {
   }
 
   function abrir(produto, elementoOrigem) {
+    produtoAtual = produto;
     fotosAtuais = fotosDoProduto(produto);
     indiceAtual = 0;
     img.alt = produto.nome;
     montarInfo(produto);
     elementoQueAbriu = elementoOrigem;
     lightbox.hidden = false;
-    document.body.style.overflow = "hidden";
+    window.travarScrollPagina();
     mostrarFoto();
     btnFechar.focus();
   }
 
   function fechar() {
     lightbox.hidden = true;
-    document.body.style.overflow = "";
+    window.destravarScrollPagina();
     if (elementoQueAbriu) elementoQueAbriu.focus();
   }
 

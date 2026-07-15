@@ -228,6 +228,8 @@ function renderizarMedia(produto) {
     [...miniaturas.children].forEach((mini, i) => mini.classList.toggle("ativa", i === indiceAtual));
   }
 
+  img.onclick = () => window.abrirZoomImagem(fotos, indiceAtual, produto.nome);
+
   miniaturas.innerHTML = "";
   if (fotos.length > 1) {
     fotos.forEach((foto, i) => {
